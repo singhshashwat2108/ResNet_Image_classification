@@ -1,5 +1,6 @@
 from tensorflow.keras import layers, models
 from utils import load_data, plot_history
+from utils import evaluate_model
 
 x_train, x_test, y_train, y_test = load_data()
 
@@ -32,3 +33,4 @@ model.compile(optimizer='adam',loss='sparse_categorical_crossentropy',metrics=['
 history = model.fit(x_train, y_train, epochs=10,validation_data=(x_test, y_test))
 
 plot_history(history, "Advanced CNN")
+evaluate_model(model, x_test, y_test)

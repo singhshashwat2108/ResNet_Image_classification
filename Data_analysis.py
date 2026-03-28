@@ -5,7 +5,7 @@ from utils import load_data
 x_train, x_test, y_train, y_test = load_data()
 
 class_names = ['airplane','automobile','bird','cat','deer',
-               'dog','frog','horse','ship','truck']
+'dog','frog','horse','ship','truck']
 
 # Sample images
 plt.figure(figsize=(10,5))
