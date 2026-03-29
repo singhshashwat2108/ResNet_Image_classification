@@ -39,3 +39,41 @@ The project progresses from a simple baseline CNN to a more advanced CNN and fin
 - Optimizer: Adam
 - Learning rate scheduling using ReduceLROnPlateau
 - Early stopping to prevent overfitting
+
+## 📈 Results
+
+## 📊 Visualizations
+
+## 🔍 Key Insights
+- Residual connections significantly improve training stability
+- Advanced CNN reduces overfitting compared to baseline
+- Data augmentation improves generalization
+- Most misclassifications occur between visually similar classes (e.g., cat vs dog)
+
+## 🛠️ Tech Stack
+- Python
+- TensorFlow / Keras
+- NumPy
+- Matplotlib
+- Scikit-learn
+
+
+## 🚀 How to Run
+
+```bash
+pip install -r requirements.txt
+
+python data_analysis.py
+python baseline_cnn.py
+python advanced_cnn.py
+python resnet_model.py
+
+## 🚀 How to Run
+
+```bash
+pip install -r requirements.txt
+
+python data_analysis.py
+python baseline_cnn.py
+python advanced_cnn.py
+python resnet_model.py
