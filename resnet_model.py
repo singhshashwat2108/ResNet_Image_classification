@@ -5,6 +5,18 @@ from tensorflow.keras.callbacks import ReduceLROnPlateau
 from tensorflow.keras import layers, models
 from tensorflow.keras.optimizers import Adam
 
+import tensorflow as tf
+import os
+
+# Use all CPU cores
+tf.config.threading.set_intra_op_parallelism_threads(12)
+tf.config.threading.set_inter_op_parallelism_threads(12)
+
+# Optional: force CPU (no GPU confusion)
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+
+print("Num CPUs used:", tf.config.threading.get_intra_op_parallelism_threads())
+
 
 x_train, x_test, y_train, y_test = load_data()
 
@@ -82,3 +94,6 @@ history = model.fit(
 
 plot_history(history, "ResNet Model")
 evaluate_model(model, x_test, y_test)
+
+loss, accuracy = model.evaluate(x_test, y_test, verbose=0)
+print("Final Test Accuracy:", accuracy)
